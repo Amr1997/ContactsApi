@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'djoser',
+    'drf_yasg',
     'core',
     'contacts',
 ]
@@ -147,4 +148,17 @@ DJOSER = {
     'SERIALIZERS':{
         'user_create': 'core.serializers.UserCreateSerializer',
     }
+}
+
+
+
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Auth Token eg [Bearer (JWT) ]': {
+            'type': 'apiKey',
+            'name': 'Authoriaztion',
+            'in': 'header',
+        }
+    },
 }
